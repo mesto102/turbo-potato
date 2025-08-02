@@ -1,26 +1,45 @@
-/* Hydro App Prefixed CSS - Prevents conflicts with Carrd styles */
+/* Hydro App ISOLATED CSS - Completely prevents conflicts */
 
-/* Container wrapper */
-.hydro-app {
+/* Container wrapper - using data attribute for extra isolation */
+[data-hydro-app] {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: #333;
 }
 
-/* All styles within hydro-app to ensure specificity */
-.hydro-app * {
+/* Reset only for hydro elements */
+[data-hydro-app] .hydro-c,
+[data-hydro-app] .hydro-t,
+[data-hydro-app] .hydro-b,
+[data-hydro-app] .hydro-d,
+[data-hydro-app] .hydro-h,
+[data-hydro-app] .hydro-s,
+[data-hydro-app] .hydro-r,
+[data-hydro-app] .hydro-x,
+[data-hydro-app] .hydro-l,
+[data-hydro-app] .hydro-l2,
+[data-hydro-app] .hydro-g,
+[data-hydro-app] .hydro-u,
+[data-hydro-app] .hydro-n,
+[data-hydro-app] .hydro-i,
+[data-hydro-app] .hydro-p,
+[data-hydro-app] .hydro-v,
+[data-hydro-app] .hydro-e,
+[data-hydro-app] .hydro-m,
+[data-hydro-app] .hydro-m2,
+[data-hydro-app] .hydro-table {
   box-sizing: border-box;
 }
 
 /* Container */
-.hydro-app .hydro-c {
+[data-hydro-app] .hydro-c {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
 /* Tabs container */
-.hydro-app .hydro-t {
+[data-hydro-app] .hydro-t {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -30,7 +49,7 @@
 }
 
 /* Buttons */
-.hydro-app .hydro-b {
+[data-hydro-app] .hydro-b {
   background: #f5f5f5;
   border: 1px solid #ddd;
   padding: 8px 16px;
@@ -42,85 +61,105 @@
   font-family: inherit;
 }
 
-.hydro-app .hydro-b:hover {
+[data-hydro-app] .hydro-b:hover {
   background: #e8e8e8;
   border-color: #ccc;
 }
 
 /* Active button state */
-.hydro-app .hydro-b.hydro-a {
+[data-hydro-app] .hydro-b.hydro-a {
   background: #0066cc;
   color: white;
   border-color: #0052a3;
 }
 
 /* Content divs */
-.hydro-app .hydro-d {
+[data-hydro-app] .hydro-d {
   display: none;
-  animation: fadeIn 0.3s ease-in;
+  animation: hydroFadeIn 0.3s ease-in;
 }
 
 /* Active content */
-.hydro-app .hydro-d.hydro-a {
+[data-hydro-app] .hydro-d.hydro-a {
   display: block;
 }
 
 /* Header section */
-.hydro-app .hydro-h {
+[data-hydro-app] .hydro-h {
   background: #f8f9fa;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.hydro-app .hydro-h h2 {
-  color: #0066cc;
+/* Headers ONLY within hydro-h */
+[data-hydro-app] .hydro-h > h2 {
+  color: #0066cc !important;
   margin: 0 0 10px 0 !important;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
-.hydro-app .hydro-h p {
-  color: #666;
-  margin: 0;
-  font-size: 16px;
+[data-hydro-app] .hydro-h > p {
+  color: #666 !important;
+  margin: 0 !important;
+  font-size: 16px !important;
 }
 
 /* Section styles */
-.hydro-app .hydro-s {
+[data-hydro-app] .hydro-s {
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Headers ONLY within hydro-s */
+[data-hydro-app] .hydro-s > h3 {
+  color: #333 !important;
+  margin: 30px 0 20px !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #e0e0e0 !important;
+  padding-bottom: 10px !important;
+}
+
+[data-hydro-app] .hydro-x > h4 {
+  margin: 0 0 15px 0 !important;
+  color: #333 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
 /* Results box */
-.hydro-app .hydro-r {
+[data-hydro-app] .hydro-r {
   background: #e8f4f8;
   padding: 20px;
   border-radius: 6px;
   margin-bottom: 30px;
 }
 
-.hydro-app .hydro-r h4 {
-  color: #0066cc;
-  margin: 0 0 15px 0;
-  font-size: 18px;
+[data-hydro-app] .hydro-r > h4 {
+  color: #0066cc !important;
+  margin: 0 0 15px 0 !important;
+  font-size: 18px !important;
 }
 
 /* Line items */
-.hydro-app .hydro-l {
+[data-hydro-app] .hydro-l {
   padding: 8px 0;
   border-bottom: 1px solid #e0e0e0;
   font-size: 14px;
 }
 
-.hydro-app .hydro-l:last-child {
+[data-hydro-app] .hydro-l:last-child {
   border-bottom: none;
 }
 
 /* Line items level 2 */
-.hydro-app .hydro-l2 {
+[data-hydro-app] .hydro-l2 {
   padding: 12px 0 8px;
   font-weight: 600;
   color: #333;
@@ -129,13 +168,13 @@
 }
 
 /* Green highlight */
-.hydro-app .hydro-g {
+[data-hydro-app] .hydro-g {
   color: #0d9b3a;
   font-weight: 600;
 }
 
 /* Box sections */
-.hydro-app .hydro-x {
+[data-hydro-app] .hydro-x {
   background: #f8f9fa;
   padding: 20px;
   margin: 20px 0;
@@ -143,80 +182,52 @@
   border-left: 4px solid #0066cc;
 }
 
-.hydro-app .hydro-x h4 {
-  margin: 0 0 15px 0;
-  color: #333;
-  font-size: 16px;
-}
-
 /* Lists */
-.hydro-app .hydro-u {
+[data-hydro-app] .hydro-u {
   margin: 10px 0;
   padding-left: 25px;
   list-style-type: disc;
 }
 
-.hydro-app .hydro-u li {
+[data-hydro-app] .hydro-u li {
   margin: 5px 0;
   color: #555;
   font-size: 14px;
 }
 
-/* Preformatted text */
-.hydro-app pre {
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 4px;
-  overflow-x: auto;
-  font-family: 'Courier New', monospace;
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 10px 0;
-  color: #333;
+/* Preformatted text ONLY within hydro-x */
+[data-hydro-app] .hydro-x > pre {
+  background: #f5f5f5 !important;
+  padding: 15px !important;
+  border-radius: 4px !important;
+  overflow-x: auto !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  margin: 10px 0 !important;
+  color: #333 !important;
 }
 
-/* Headers in content */
-.hydro-app h3 {
-  color: #333;
-  margin: 30px 0 20px;
-  font-size: 20px;
-  font-weight: 600;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 10px;
+/* Paragraphs ONLY within hydro elements */
+[data-hydro-app] .hydro-x > p,
+[data-hydro-app] .hydro-s > p {
+  margin: 10px 0 !important;
+  line-height: 1.6 !important;
+  color: #333 !important;
+  font-size: 14px !important;
 }
 
-.hydro-app h4 {
-  color: #444;
-  margin: 20px 0 10px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.hydro-app h5 {
-  color: #555;
-  margin: 15px 0 5px;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Paragraphs */
-.hydro-app p {
-  margin: 10px 0;
-  line-height: 1.6;
-  color: #333;
-  font-size: 14px;
-}
-
-/* Strong text */
-.hydro-app strong {
-  font-weight: 600;
-  color: #222;
+/* Strong text ONLY within hydro elements */
+[data-hydro-app] .hydro-x strong,
+[data-hydro-app] .hydro-s strong,
+[data-hydro-app] .hydro-l strong,
+[data-hydro-app] .hydro-h strong {
+  font-weight: 600 !important;
+  color: #222 !important;
 }
 
 /* Note section */
-.hydro-app .hydro-n {
+[data-hydro-app] .hydro-n {
   background: #fff3cd;
   padding: 15px;
   border-radius: 6px;
@@ -227,7 +238,7 @@
 }
 
 /* Info grid */
-.hydro-app .hydro-i {
+[data-hydro-app] .hydro-i {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
@@ -235,7 +246,7 @@
 }
 
 /* Info panels */
-.hydro-app .hydro-p {
+[data-hydro-app] .hydro-p {
   background: #f0f7ff;
   padding: 20px;
   border-radius: 6px;
@@ -243,8 +254,17 @@
   border: 1px solid #d0e3ff;
 }
 
+[data-hydro-app] .hydro-p > h5 {
+  color: #555 !important;
+  margin: 15px 0 5px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
 /* Values */
-.hydro-app .hydro-v {
+[data-hydro-app] .hydro-v {
   font-size: 28px;
   font-weight: 700;
   color: #0066cc;
@@ -252,52 +272,52 @@
 }
 
 /* Explanations */
-.hydro-app .hydro-e {
+[data-hydro-app] .hydro-e {
   font-size: 13px;
   color: #666;
   font-weight: 400;
 }
 
 /* Tables */
-.hydro-app .hydro-table {
+[data-hydro-app] .hydro-table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 14px;
 }
 
-.hydro-app .hydro-table th,
-.hydro-app .hydro-table td {
+[data-hydro-app] .hydro-table th,
+[data-hydro-app] .hydro-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
-.hydro-app .hydro-table th {
+[data-hydro-app] .hydro-table th {
   background: #f0f7ff;
   font-weight: 600;
   color: #0066cc;
 }
 
-.hydro-app .hydro-table tr:nth-child(even) {
+[data-hydro-app] .hydro-table tr:nth-child(even) {
   background: #f8f9fa;
 }
 
-.hydro-app .hydro-table tr:hover {
+[data-hydro-app] .hydro-table tr:hover {
   background: #e8f4f8;
 }
 
 /* Margin class */
-.hydro-app .hydro-m {
+[data-hydro-app] .hydro-m {
   margin-top: 20px;
 }
 
-.hydro-app .hydro-m2 {
+[data-hydro-app] .hydro-m2 {
   margin-top: 30px;
 }
 
-/* Animation */
-@keyframes fadeIn {
+/* Animation with unique name */
+@keyframes hydroFadeIn {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -310,42 +330,42 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  .hydro-app .hydro-c {
+  [data-hydro-app] .hydro-c {
     padding: 10px;
   }
   
-  .hydro-app .hydro-t {
+  [data-hydro-app] .hydro-t {
     flex-direction: column;
   }
   
-  .hydro-app .hydro-b {
+  [data-hydro-app] .hydro-b {
     width: 100%;
     margin-bottom: 5px;
   }
   
-  .hydro-app .hydro-i {
+  [data-hydro-app] .hydro-i {
     grid-template-columns: 1fr;
   }
   
-  .hydro-app .hydro-h h2 {
-    font-size: 20px;
+  [data-hydro-app] .hydro-h > h2 {
+    font-size: 20px !important;
   }
   
-  .hydro-app .hydro-v {
+  [data-hydro-app] .hydro-v {
     font-size: 24px;
   }
   
-  .hydro-app .hydro-table {
+  [data-hydro-app] .hydro-table {
     font-size: 12px;
   }
   
-  .hydro-app .hydro-table th,
-  .hydro-app .hydro-table td {
+  [data-hydro-app] .hydro-table th,
+  [data-hydro-app] .hydro-table td {
     padding: 8px 5px;
   }
   
-  .hydro-app pre {
-    font-size: 11px;
-    padding: 10px;
+  [data-hydro-app] .hydro-x > pre {
+    font-size: 11px !important;
+    padding: 10px !important;
   }
 }
